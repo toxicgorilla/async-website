@@ -1,0 +1,2517 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="google-site-verification" content="i7Zcd4VE6mdqs2t1pb_kquaAQI_WItbWMOAt7_t0AYo" />
+    <title>Archives &ndash; Async</title>
+    <link rel="author" href="/humans.txt">
+    <link rel="shortcut icon" href="/img/favicon.png" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:400,700|Anton">
+    <link rel="stylesheet" href="/css/global.css" />
+  <!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-2150808-14', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+<!-- End Google Analytics --></head>
+  <body>
+    <div class="wrapper">
+      <header class="masthead">
+        <div class="logo-and-title">
+          <img class="logo" src="/img/logo-100x100.png" width="50" height="50" />
+          <h1>
+            <a href="/">
+              Async:
+            </a>
+          </h1>
+          <p>A Web Tech Meetup for <em>Brighton &amp; Hove</em></p>
+      
+        </div>
+        <ul class="social">
+            <li>
+              <a href="https://twitter.com/asyncjs" target="_blank" title="Follow @asyncjs on Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.5 8.778c-.441.196-.916.328-1.414.388.509-.305.898-.787 1.083-1.362-.476.282-1.003.487-1.564.597-.448-.479-1.089-.778-1.796-.778-1.59 0-2.758 1.483-2.399 3.023-2.045-.103-3.86-1.083-5.074-2.572-.645 1.106-.334 2.554.762 3.287-.403-.013-.782-.124-1.114-.308-.027 1.14.791 2.207 1.975 2.445-.346.094-.726.116-1.112.042.313.978 1.224 1.689 2.3 1.709-1.037.812-2.34 1.175-3.647 1.021 1.09.699 2.383 1.106 3.773 1.106 4.572 0 7.154-3.861 6.998-7.324.482-.346.899-.78 1.229-1.274z"/></svg>
+      
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/pages/Async/533002916854919" target="_blank" title="Like our page on Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 10h-2v2h2v6h3v-6h1.82l.18-2h-2v-.833c0-.478.096-.667.558-.667h1.442v-2.5h-2.404c-1.798 0-2.596.792-2.596 2.308v1.692z"/></svg>
+      
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/AsyncBrighton" target="_blank" title="Subscribe to our YouTube channel">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.23 7.102c-2.002-.136-6.462-.135-8.461 0-2.165.148-2.419 1.456-2.436 4.898.017 3.436.27 4.75 2.437 4.898 1.999.135 6.459.136 8.461 0 2.165-.148 2.42-1.457 2.437-4.898-.018-3.436-.271-4.75-2.438-4.898zm-6.23 7.12v-4.444l4.778 2.218-4.778 2.226zm2-12.222c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12z"/></svg>
+      
+              </a>
+            </li>
+            <li>
+              <a href="mailto:hello@asyncjs.com?Subject&#x3D;Please%20add%20me%20to%20the%20Async%20Slack%20channel" target="_blank" title="Request access to the Async Slack channel">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm5.336 12.105l-1.216.405.421 1.258c.165.509-.105 1.063-.615 1.228-.575.162-1.074-.161-1.232-.613l-.42-1.259-2.506.838.42 1.259c.195.601-.217 1.271-.916 1.271-.44 0-.8-.282-.93-.657l-.421-1.258-1.215.404c-.568.164-1.073-.158-1.232-.614-.164-.509.106-1.064.616-1.228l1.216-.405-.811-2.411-1.216.404c-.677.192-1.279-.295-1.279-.92 0-.408.255-.791.664-.923l1.216-.404-.421-1.258c-.165-.51.106-1.064.616-1.229.51-.164 1.065.105 1.231.615l.421 1.257 2.505-.838-.419-1.259c-.202-.619.242-1.276.921-1.276.41 0 .793.254.925.663l.421 1.258 1.215-.405c.51-.165 1.066.106 1.231.615.166.509-.105 1.063-.615 1.228l-1.217.404.811 2.412 1.217-.405c.621-.2 1.278.242 1.278.919 0 .41-.255.792-.664.924zm-4.496-3.214l-2.505.837.81 2.414 2.505-.837-.81-2.414z"/></svg>
+      
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/asyncjs/async-website" target="_blank" title="Fork this site on GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 6c-3.313 0-6 2.686-6 6 0 2.651 1.719 4.9 4.104 5.693.3.056.396-.13.396-.289v-1.117c-1.669.363-2.017-.707-2.017-.707-.272-.693-.666-.878-.666-.878-.544-.373.041-.365.041-.365.603.042.92.619.92.619.535.917 1.403.652 1.746.499.054-.388.209-.652.381-.802-1.333-.152-2.733-.667-2.733-2.965 0-.655.234-1.19.618-1.61-.062-.153-.268-.764.058-1.59 0 0 .504-.161 1.65.615.479-.133.992-.199 1.502-.202.51.002 1.023.069 1.503.202 1.146-.776 1.648-.615 1.648-.615.327.826.121 1.437.06 1.588.385.42.617.955.617 1.61 0 2.305-1.404 2.812-2.74 2.96.216.186.412.551.412 1.111v1.646c0 .16.096.347.4.288 2.383-.793 4.1-3.041 4.1-5.691 0-3.314-2.687-6-6-6z"/></svg>
+      
+              </a>
+            </li>
+        </ul>
+      </header>
+      <section class="module about">
+        <div class="prose"><p>Async meets monthly in Brighton &amp; Hove, UK, to learn, discuss and play with JavaScript and related web technologies.</p>
+      <p>We host talks, hack nights, show n&#39; tells and community events, all of which are free. </p>
+      <p>Doors open 7.15pm, main session begins 7.45pm, we end around 9.30pm and continue nearby for an evening social.</p>
+      </div>
+      </section>
+      
+<h2>Archives</h2>
+<section class="module links">
+  <ul>
+      <li><a href="2010" title="2010">2010</a></li>
+      <li><a href="2011" title="2011">2011</a></li>
+      <li><a href="2012" title="2012">2012</a></li>
+      <li><a href="2013" title="2013">2013</a></li>
+      <li><a href="2014" title="2014">2014</a></li>
+      <li><a href="2015" title="2015">2015</a></li>
+      <li><a href="2016" title="2016">2016</a></li>
+      <li><a href="2017" title="2017">2017</a></li>
+      <li><a href="2018" title="2018">2018</a></li>
+      <li><a href="2019" title="2019">2019</a></li>
+  </ul>
+</section>
+  <section class="module">
+    <h2 class="module-heading">July 2019:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/gatsby">An Introduction to Gatsby and Gatsby Themes</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2019-07-04T19:15:00Z" datetime="2019-07-04T19:15:00Z">Thursday, 4th July 2019</time>
+  @
+  <a href="https://www.theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">June 2019:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/semprola">Semprola, a semiotic programming language</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2019-06-06T19:15:00Z" datetime="2019-06-06T19:15:00Z">Thursday, 6th June 2019</time>
+  @
+  <a href="https://www.theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">May 2019:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/ask-the-brains-spring-19">Ask the Brains Spring 2019</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2019-05-02T19:15:00Z" datetime="2019-05-02T19:15:00Z">Thursday, 2nd May 2019</time>
+  @
+  <a href="https://www.theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">April 2019:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/react-hooks">React Hooks</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2019-04-04T19:15:00Z" datetime="2019-04-04T19:15:00Z">Thursday, 4th April 2019</time>
+  @
+  <a href="https://www.theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">March 2019:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/imposter-syndrome">Imposter Syndrome</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2019-03-14T19:15:00Z" datetime="2019-03-14T19:15:00Z">Thursday, 14th March 2019</time>
+  @
+  <a href="https://www.theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">February 2019:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/govuk-react">govuk-react - our UI component library and CI pipeline</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2019-02-07T19:15:00Z" datetime="2019-02-07T19:15:00Z">Thursday, 7th February 2019</time>
+  @
+  <a href="https://www.theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">January 2019:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/webgl">WebGL with Dan Neame</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2019-01-10T19:15:00Z" datetime="2019-01-10T19:15:00Z">Thursday, 10th January 2019</time>
+  @
+  <a href="https://www.theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">December 2018:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/readable-code">Useable, Grammatical and Readable code</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2018-12-06T19:15:00Z" datetime="2018-12-06T19:15:00Z">Thursday, 6th December 2018</time>
+  @
+  <a href="https://www.theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">November 2018:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/international-show-n-tell-2018">2018 International Show n&#x27; Tell</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2018-11-07T19:15:00Z" datetime="2018-11-07T19:15:00Z">Wednesday, 7th November 2018</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/supercharged-spreadsheets">Supercharged Spreadsheets</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2018-11-01T19:15:00Z" datetime="2018-11-01T19:15:00Z">Thursday, 1st November 2018</time>
+  @
+  <a href="https://www.theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">October 2018:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/double-bill-electron-n-unit-testing">Double bill - Electron and Unit Testing</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2018-10-04T19:15:00Z" datetime="2018-10-04T19:15:00Z">Thursday, 4th October 2018</time>
+  @
+  <a href="https://www.theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">September 2018:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/compression">Compression</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2018-09-06T19:15:00Z" datetime="2018-09-06T19:15:00Z">Thursday, 6th September 2018</time>
+  @
+  <a href="https://www.theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">August 2018:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/react-native">React Native</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2018-08-02T19:15:00Z" datetime="2018-08-02T19:15:00Z">Thursday, 2nd August 2018</time>
+  @
+  <a href="https://www.theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">July 2018:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/alexa-apps">Alexa workshop</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2018-07-05T19:15:00Z" datetime="2018-07-05T19:15:00Z">Thursday, 5th July 2018</time>
+  @
+  <a href="https://www.theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">June 2018:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/intro-to-rust">Intro to Rust</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2018-06-14T19:15:00Z" datetime="2018-06-14T19:15:00Z">Thursday, 14th June 2018</time>
+  @
+  <a href="https://www.theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">May 2018:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/continuous-delivery">Continuous Integration/Continuous Delivery</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2018-05-03T19:15:00Z" datetime="2018-05-03T19:15:00Z">Thursday, 3rd May 2018</time>
+  @
+  <a href="https://www.theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">April 2018:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/show-n-tell-spring-2018">Show n&#x27; Tell Spring 2018</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2018-04-05T19:15:00Z" datetime="2018-04-05T19:15:00Z">Thursday, 5th April 2018</time>
+  @
+  <a href="https://www.theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">March 2018:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/limitation-breeds-creativity">Limitation breeds creativity</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2018-03-01T19:15:00Z" datetime="2018-03-01T19:15:00Z">Thursday, 1st March 2018</time>
+  @
+  <a href="http://www.theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">February 2018:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/ask-the-brains-spring-18">Ask the Brains</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2018-02-01T19:15:00Z" datetime="2018-02-01T19:15:00Z">Thursday, 1st February 2018</time>
+  @
+  <a href="http://www.theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">January 2018:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/firebase">Firebase</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2018-01-04T19:15:00Z" datetime="2018-01-04T19:15:00Z">Thursday, 4th January 2018</time>
+  @
+  <a href="http://www.theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">December 2017:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/ruby-rocks">Ruby rocks</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2017-12-07T19:15:00Z" datetime="2017-12-07T19:15:00Z">Thursday, 7th December 2017</time>
+  @
+  <a href="http://www.theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">November 2017:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/international-show-n-tell-2017">2017 International Show n&#x27; Tell</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2017-11-08T19:15:00Z" datetime="2017-11-08T19:15:00Z">Wednesday, 8th November 2017</time>
+  @
+  <a href="https://www.theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">October 2017:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/codebar-takeover">Code, Explore, Create. Inspirational Demos from codebar</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2017-10-12T19:15:00Z" datetime="2017-10-12T19:15:00Z">Thursday, 12th October 2017</time>
+  @
+  <a href="http://www.theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">September 2017:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/pathfinding-with-snake">Pathfinding with Snake: A Javascript Hacknight</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2017-09-21T19:15:00Z" datetime="2017-09-21T19:15:00Z">Thursday, 21st September 2017</time>
+  @
+  <a href="http://www.theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/types-for-js">Getting into the Flow: Static Types for Javascript</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2017-09-07T19:15:00Z" datetime="2017-09-07T19:15:00Z">Thursday, 7th September 2017</time>
+  @
+  <a href="http://www.theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">August 2017:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/d3-geo">Mapping with D3</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2017-08-03T19:15:00Z" datetime="2017-08-03T19:15:00Z">Thursday, 3rd August 2017</time>
+  @
+  <a href="http://www.theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">July 2017:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/graphql">GraphQL with Tom Ashworth</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2017-07-06T19:15:00Z" datetime="2017-07-06T19:15:00Z">Thursday, 6th July 2017</time>
+  @
+  <a href="http://www.theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">June 2017:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/hardware-hacking">Building an Internet-of-Things thing</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2017-06-01T19:15:00Z" datetime="2017-06-01T19:15:00Z">Thursday, 1st June 2017</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">May 2017:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/iframe-to-byeframe">From iFrame to ByeFrame</a>
+    <a class="lanyrd-link" href="https://lanyrd.com/2017/asyncjs-iframe-to-byeframe">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2017-05-04T19:15:00Z" datetime="2017-05-04T19:15:00Z">Thursday, 4th May 2017</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">April 2017:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/writing-secure-javascript">Writing Secure JavaScript</a>
+    <a class="lanyrd-link" href="https://lanyrd.com/2017/asyncjs-writing-secure-javascript">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2017-04-06T19:15:00Z" datetime="2017-04-06T19:15:00Z">Thursday, 6th April 2017</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">March 2017:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/esgolf">ESGolf (JavaScript Golf 2)</a>
+    <a class="lanyrd-link" href="https://lanyrd.com/2017/asyncjs-esgolf">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2017-03-02T19:15:00Z" datetime="2017-03-02T19:15:00Z">Thursday, 2nd March 2017</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">February 2017:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/how-to-build-a-bot">The rise of the bots</a>
+    <a class="lanyrd-link" href="https://lanyrd.com/2017/asyncjs-how-to-build-a-bot">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2017-02-02T19:15:00Z" datetime="2017-02-02T19:15:00Z">Thursday, 2nd February 2017</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">January 2017:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/intro-to-angular-2">What is Angular 2? From a simple component to zones</a>
+    <a class="lanyrd-link" href="https://lanyrd.com/2017/asyncjs-intro-to-angular-2">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2017-01-05T19:15:00Z" datetime="2017-01-05T19:15:00Z">Thursday, 5th January 2017</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">December 2016:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/intro-to-d3">Web based interactive visualizations in D3.js</a>
+    <a class="lanyrd-link" href="https://lanyrd.com/2016/asyncjs-intro-to-d3">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2016-12-01T19:15:00Z" datetime="2016-12-01T19:15:00Z">Thursday, 1st December 2016</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">November 2016:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/international-show-n-tell-2016">2016 International Show n&#x27; Tell</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2016/asyncjs-international-showntell">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2016-11-09T19:15:00Z" datetime="2016-11-09T19:15:00Z">Wednesday, 9th November 2016</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/neural-networks">Neural Networks for Squirrels</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2016/asyncjs-neural-networks">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2016-11-03T19:15:00Z" datetime="2016-11-03T19:15:00Z">Thursday, 3rd November 2016</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">October 2016:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/make-your-own-js-game-pt-2">Make Your Own JS Game Part 2</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2016/asyncjs-make-your-own-js-game-pt-2">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2016-10-06T19:15:00Z" datetime="2016-10-06T19:15:00Z">Thursday, 6th October 2016</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">September 2016:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/fishcotheque-part-2">Fishcotheque (part 2 of 2)</a>
+    <a class="lanyrd-link" href="https://lanyrd.com/2016/asyncjs-fishcotheque-2-of-2">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2016-09-22T19:15:00Z" datetime="2016-09-22T19:15:00Z">Thursday, 22nd September 2016</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/fishcotheque">Fishcotheque (part 1 of 2)</a>
+    <a class="lanyrd-link" href="https://lanyrd.com/2016/asyncjs-fishcotheque-1-of-2">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2016-09-08T19:15:00Z" datetime="2016-09-08T19:15:00Z">Thursday, 8th September 2016</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">August 2016:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/twofer-games-and-bots">Twofer - The State of the Game &amp; Beyond 2D; Into the shadows</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2016/asyncjs-twofer-game-and-bots">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2016-08-25T19:15:00Z" datetime="2016-08-25T19:15:00Z">Thursday, 25th August 2016</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/misadventures-in-javascript">Misadventures in JavaScript - a decade of pointless experiments</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2016/asyncjs-misadventures-in-javascript">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2016-08-11T19:15:00Z" datetime="2016-08-11T19:15:00Z">Thursday, 11th August 2016</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">July 2016:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/seb-lee-delisle">JavaScript Electronics on the Pi Zero</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2016/asyncjs-raspberry-pi">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2016-07-28T19:15:00Z" datetime="2016-07-28T19:15:00Z">Thursday, 28th July 2016</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/angular-at-scale">Angular at Scale</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2016/asyncjs-angular-at-scale">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2016-07-07T19:15:00Z" datetime="2016-07-07T19:15:00Z">Thursday, 7th July 2016</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">June 2016:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/glenn-jones">Extending the offline web experience</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2016/asyncjs-glenn-jones/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2016-06-23T19:15:00Z" datetime="2016-06-23T19:15:00Z">Thursday, 23rd June 2016</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/make-your-own-js-game">Make Your Own JS Game</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2016/asyncjs-make-your-own-js-game">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2016-06-09T19:15:00Z" datetime="2016-06-09T19:15:00Z">Thursday, 9th June 2016</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">May 2016:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/introduction-to-nlp-with-python">Introduction to NLP with Python</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2016/asyncjs-introduction-to-nlp-with-python">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2016-05-26T19:15:00Z" datetime="2016-05-26T19:15:00Z">Thursday, 26th May 2016</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/adventures-of-startup-in-startup">Adventures of a startup within a startup</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2016/asyncjs-adventures-startup">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2016-05-12T19:15:00Z" datetime="2016-05-12T19:15:00Z">Thursday, 12th May 2016</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">April 2016:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/showntell-spring-2016">Spring Show n&#x27; Tell</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2016/asyncjs-showntell-2016-spring/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2016-04-28T19:15:00Z" datetime="2016-04-28T19:15:00Z">Thursday, 28th April 2016</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/building-things-with-lots-of-devices">Internet of Browsers</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2016/asyncjs-building-things-with-lots-of-devices">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2016-04-07T19:15:00Z" datetime="2016-04-07T19:15:00Z">Thursday, 7th April 2016</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">March 2016:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/power-to-the-patterns">Power to the Patterns - creating component libraries that work from prototype to production</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2016/asyncjs-power-to-the-patterns">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2016-03-31T19:15:00Z" datetime="2016-03-31T19:15:00Z">Thursday, 31st March 2016</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/web-audio">Web Audio - Let there be sound</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2016/asyncjs-web-audio">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2016-03-17T19:15:00Z" datetime="2016-03-17T19:15:00Z">Thursday, 17th March 2016</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/motion-on-the-web">Motion on the Web</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2016/asyncjs-motion-on-the-web">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2016-03-03T19:15:00Z" datetime="2016-03-03T19:15:00Z">Thursday, 3rd March 2016</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">February 2016:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/twofer-local-to-live-plus-generators">Twofer - From Local to Live - Generate yo&#x27; Generators</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2016/asyncjs-twofer">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2016-02-18T19:15:00Z" datetime="2016-02-18T19:15:00Z">Thursday, 18th February 2016</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/universal-javascript">Writing Universal JavaScript</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2016/asyncjs-universal-javascript">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2016-02-04T19:15:00Z" datetime="2016-02-04T19:15:00Z">Thursday, 4th February 2016</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">January 2016:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/remixable-servers">Astronauts, Conway&#x27;s Law and Text Adventure - Experiments in Remixable Servers</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2016/asyncjs-remixable-servers">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2016-01-21T19:15:00Z" datetime="2016-01-21T19:15:00Z">Thursday, 21st January 2016</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">December 2015:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/async-await">Async @ Async</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2015/asyncjs-async-at-async">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2015-12-17T19:15:00Z" datetime="2015-12-17T19:15:00Z">Thursday, 17th December 2015</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/practical-graphql">Practical GraphQL</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2015/asyncjs-graphql/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2015-12-03T19:15:00Z" datetime="2015-12-03T19:15:00Z">Thursday, 3rd December 2015</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">November 2015:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/fancy-pants-new-javascript">ES6/ES2015 - Fancy Pants New JavaScript</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2015/asyncjs-fancy-pants-new-javascript">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2015-11-19T19:15:00Z" datetime="2015-11-19T19:15:00Z">Thursday, 19th November 2015</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/showntell-2015">2015 International Show n&#x27; Tell</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2015/asyncjs-international-showntell">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2015-11-05T19:15:00Z" datetime="2015-11-05T19:15:00Z">Thursday, 5th November 2015</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">October 2015:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/resilience">Resilience</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2015/asyncjs-resilience">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2015-10-22T18:15:00Z" datetime="2015-10-22T18:15:00Z">Thursday, 22nd October 2015</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/designing-for-humans">Designing for Humans</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2015/async-designing-for-humans">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2015-10-08T19:15:00Z" datetime="2015-10-08T19:15:00Z">Thursday, 8th October 2015</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">September 2015:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/playcanvas-hacknight-part-2">Playcanvas Lunar Lander Hacknight (Part 2)</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2015/async-playcanvas-hacknight-part-2">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2015-09-24T19:15:00Z" datetime="2015-09-24T19:15:00Z">Thursday, 24th September 2015</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/playcanvas-hacknight-part-1">Playcanvas Lunar Lander Hacknight (Part 1)</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2015/async-playcanvas-hacknight-part-1">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2015-09-10T19:15:00Z" datetime="2015-09-10T19:15:00Z">Thursday, 10th September 2015</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">August 2015:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/beyond-slide-decks">Beyond slide decks</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2015/async-beyond-slide-decks">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2015-08-27T19:15:00Z" datetime="2015-08-27T19:15:00Z">Thursday, 27th August 2015</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/toxic-side-of-open-source">The toxic side of open source</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2015/async-the-toxic-side-of-open-source/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2015-08-20T19:15:00Z" datetime="2015-08-20T19:15:00Z">Thursday, 20th August 2015</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/wtf-what-the-flux">WTF: What The Flux?</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2015/what-the-flux">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2015-08-06T19:15:00Z" datetime="2015-08-06T19:15:00Z">Thursday, 6th August 2015</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">July 2015:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/functors-and-monads">Functors and Monads</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2015/functors-and-monads">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2015-07-23T19:15:00Z" datetime="2015-07-23T19:15:00Z">Thursday, 23rd July 2015</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/webrtc-and-push-notifications">Phil Nash Doublebill - WebRTC and Push notifications</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2015/phil-nash-doublebill-webrtc-and-push-notifications">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2015-07-09T19:15:00Z" datetime="2015-07-09T19:15:00Z">Thursday, 9th July 2015</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">June 2015:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/tim-ruffles">AngularJS 1.x the right way</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2015/angularjs-1-x-the-right-way">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2015-06-25T19:15:00Z" datetime="2015-06-25T19:15:00Z">Thursday, 25th June 2015</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/killer-page-load-performance">Killer page load performance</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2015/killer-page-load-performance/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2015-06-11T19:15:00Z" datetime="2015-06-11T19:15:00Z">Thursday, 11th June 2015</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">May 2015:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/7-similarities-between-go-and-node">7 Similarities between Go and Node</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2015/7-similarities-between-go-and-node-agai/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2015-05-21T19:15:00Z" datetime="2015-05-21T19:15:00Z">Thursday, 21st May 2015</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">April 2015:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/friction-free-gaming">Friction Free Gaming</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2015/friction-free-gaming/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2015-04-30T19:15:00Z" datetime="2015-04-30T19:15:00Z">Thursday, 30th April 2015</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/getting-started-with-es6-modules-today">Getting Started with ES6 Modules Today</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2015/getting-started-with-es6-modules/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2015-04-02T19:15:00Z" datetime="2015-04-02T19:15:00Z">Thursday, 2nd April 2015</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">March 2015:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/creative-functional-programming">Creative Functional Programming</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2015/asyncjs-march/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2015-03-19T19:15:00Z" datetime="2015-03-19T19:15:00Z">Thursday, 19th March 2015</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/javascript-golf">JavaScript Golf</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2015/javascript-golf">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2015-03-05T19:15:00Z" datetime="2015-03-05T19:15:00Z">Thursday, 5th March 2015</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">February 2015:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/showntell-spring-2015">Spring Show n&#x27; Tell</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2015/asyncjs-showntell-spring-2015/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2015-02-19T19:15:00Z" datetime="2015-02-19T19:15:00Z">Thursday, 19th February 2015</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/little-language-design-workshop">Little Language Design Workshop</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2015/little-language-design-workshop">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2015-02-05T19:15:00Z" datetime="2015-02-05T19:15:00Z">Thursday, 5th February 2015</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">January 2015:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/learn-threejs">Everything you ever wanted to know about Three.js and WebGL but were afraid to ask</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2015/asyncjs-2/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2015-01-22T19:15:00Z" datetime="2015-01-22T19:15:00Z">Thursday, 22nd January 2015</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/d3-layouts">Tree and Network Visualisation using D3.js Layouts</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2015/asyncjs/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2015-01-08T19:15:00Z" datetime="2015-01-08T19:15:00Z">Thursday, 8th January 2015</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">December 2014:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/node-proxy">Node Proxy &quot;All your net are belong to us&quot;</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2014/asyncjs-node-proxy/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2014-12-11T19:15:00Z" datetime="2014-12-11T19:15:00Z">Thursday, 11th December 2014</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/building-apis-workshop">Async Special - Hapi.js Workshop</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2014/async-hapijs-workshop">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2014-12-06T13:00:00Z" datetime="2014-12-06T13:00:00Z">Saturday, 6th December 2014</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">November 2014:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/node-and-google-glass">Google Glass and Node.js</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2014/async-google-glass-and-nodejs">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2014-11-27T19:15:00Z" datetime="2014-11-27T19:15:00Z">Thursday, 27th November 2014</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/showntell-2014">2014 International Show n&#x27; Tell</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2014/asyncjs-november/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2014-11-06T19:15:00Z" datetime="2014-11-06T19:15:00Z">Thursday, 6th November 2014</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">October 2014:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/sass-for-newbies">Sass for Newbies</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2014/async-sass-for-newbies/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2014-10-23T19:15:00Z" datetime="2014-10-23T19:15:00Z">Thursday, 23rd October 2014</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/functions-frameworks-flow">Functions, frameworks and flow</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2014/async-tom-ashworth-october/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2014-10-09T19:15:00Z" datetime="2014-10-09T19:15:00Z">Thursday, 9th October 2014</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">September 2014:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/robocode-hackathon-part-2">Robocode Hackathon (part 2 of 2)</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2014/async-robocode-hackathon-part-2-of-2/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2014-09-25T19:15:00Z" datetime="2014-09-25T19:15:00Z">Thursday, 25th September 2014</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/robocode-hackathon-part-1">Robocode Hackathon (part 1 of 2)</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2014/async-robocode-hackathon-part-1-of-2">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2014-09-11T19:15:00Z" datetime="2014-09-11T19:15:00Z">Thursday, 11th September 2014</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">August 2014:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/on-the-composition-of-curried-lambdas">On the Composition of Curried Lamb(das)</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2014/async-on-the-composition-of-curried-lambdas">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2014-08-21T19:15:00Z" datetime="2014-08-21T19:15:00Z">Thursday, 21st August 2014</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/my-year-of-crawling">My Year of Crawling</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2014/async-my-year-of-crawling/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2014-08-07T19:15:00Z" datetime="2014-08-07T19:15:00Z">Thursday, 7th August 2014</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">July 2014:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/everything-is-awesome">Everything is Awesome</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2014/async-everything-is-awesome/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2014-07-24T19:15:00Z" datetime="2014-07-24T19:15:00Z">Thursday, 24th July 2014</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/nodebar">Nodebar</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2014/async-nodebar/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2014-07-10T19:15:00Z" datetime="2014-07-10T19:15:00Z">Thursday, 10th July 2014</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">June 2014:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/birthday4">4th Birthday Show n&#x27; Tell</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2014/asyncjs-june/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2014-06-19T19:15:00Z" datetime="2014-06-19T19:15:00Z">Thursday, 19th June 2014</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/ionic">Ionic, build awesome hybrid apps with HTML5 and AngularJS</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2014/asyncjs/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2014-06-05T19:15:00Z" datetime="2014-06-05T19:15:00Z">Thursday, 5th June 2014</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">May 2014:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/a-gentle-introduction-to-frp">A gentle introduction to FRP</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2014/asyncjs-frp/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2014-05-22T19:15:00Z" datetime="2014-05-22T19:15:00Z">Thursday, 22nd May 2014</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/parsing-for-great-victory">Parsing for Much Fun and Great Victory</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2014/asyncjs-pegjs/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2014-05-08T19:15:00Z" datetime="2014-05-08T19:15:00Z">Thursday, 8th May 2014</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">April 2014:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/async-declarative-javascript-pipelines">Data pipelines in client side JavaScript</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2014/asyncjs-data-pipelines/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2014-04-24T19:15:00Z" datetime="2014-04-24T19:15:00Z">Thursday, 24th April 2014</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/ubuntu-touch">Developing Apps for Ubuntu</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2014/asyncjs-ubuntu-touch/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2014-04-10T19:15:00Z" datetime="2014-04-10T19:15:00Z">Thursday, 10th April 2014</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">March 2014:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/nodeschool">Async Does Nodeschool</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2014/asyncjs-nodeschool/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2014-03-27T19:00:00Z" datetime="2014-03-27T19:00:00Z">Thursday, 27th March 2014</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/pro-git">Pro Git</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2014/asyncjs-pro-git/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2014-03-13T19:15:00Z" datetime="2014-03-13T19:15:00Z">Thursday, 13th March 2014</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">February 2014:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/pjax">Hybrid Web Applications with PJAX and HATEOAS</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2014/asyncjs-pjax/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2014-02-27T19:15:00Z" datetime="2014-02-27T19:15:00Z">Thursday, 27th February 2014</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/css-turing">HTML and CSS as a programming environment</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2014/asyncjs-css-turing/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2014-02-13T19:15:00Z" datetime="2014-02-13T19:15:00Z">Thursday, 13th February 2014</time>
+  @
+  <a href="http://68middle.st">68 Middle St</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">January 2014:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/pseudo">Meet the pseudo elements</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2014/asyncjs-pseudo/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2014-01-23T19:15:00Z" datetime="2014-01-23T19:15:00Z">Thursday, 23rd January 2014</time>
+  @
+  <a href="http://L4RP.com">Lab for the Recently Possible</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/sidekick">SidekickJS - Building a SaaS for developers</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2014/asyncjs-sidekick/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2014-01-09T19:15:00Z" datetime="2014-01-09T19:15:00Z">Thursday, 9th January 2014</time>
+  @
+  <a href="http://L4RP.com">Lab for the Recently Possible</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">December 2013:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/serviceworker">ServiceWorker &amp; the Offline Web</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2013/async-serviceworker/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2013-12-12T19:15:00Z" datetime="2013-12-12T19:15:00Z">Thursday, 12th December 2013</time>
+  @
+  <a href="http://L4RP.com">Lab for the Recently Possible</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">November 2013:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/flight">Scalable web apps with Flight</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2013/asyncjs-flight/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2013-11-28T19:15:00Z" datetime="2013-11-28T19:15:00Z">Thursday, 28th November 2013</time>
+  @
+  <a href="http://L4RP.com">Lab for the Recently Possible</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/showntell-2013">2013 International Show n&#x27; Tell</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2013/asyncjs-showntell-2013/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2013-11-07T19:15:00Z" datetime="2013-11-07T19:15:00Z">Thursday, 7th November 2013</time>
+  @
+  <a href="http://L4RP.com">Lab for the Recently Possible</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">October 2013:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/raspberrypi">Hacking the Raspberry Pi with JavaScript</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2013/asyncjs-raspberrypi/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2013-10-24T19:15:00Z" datetime="2013-10-24T19:15:00Z">Thursday, 24th October 2013</time>
+  @
+  <a href="http://L4RP.com">Lab for the Recently Possible</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/be-more-hapi">Be More HAPI</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2013/asyncjs-be-more-hapi/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2013-10-10T19:15:00Z" datetime="2013-10-10T19:15:00Z">Thursday, 10th October 2013</time>
+  @
+  <a href="http://L4RP.com">Lab for the Recently Possible</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">September 2013:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/nodeventure2">Nodeventure: hack night 2</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2013/asyncjs-nodeventure2/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2013-09-26T19:15:00Z" datetime="2013-09-26T19:15:00Z">Thursday, 26th September 2013</time>
+  @
+  <a href="http://L4RP.com">Lab for the Recently Possible</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/nodeventure">Nodeventure: hack night 1</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2013/asyncjs-nodeventure/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2013-09-12T19:15:00Z" datetime="2013-09-12T19:15:00Z">Thursday, 12th September 2013</time>
+  @
+  <a href="http://L4RP.com">Lab for the Recently Possible</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">August 2013:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/server-sent-events">Real-time web with Server-Sent Events</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2013/asyncjs-server-sent-events/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2013-08-22T19:15:00Z" datetime="2013-08-22T19:15:00Z">Thursday, 22nd August 2013</time>
+  @
+  <a href="http://L4RP.com">Lab for the Recently Possible</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/workers">Up the Worker()s!</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2013/asyncjs-workers/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2013-08-08T19:15:00Z" datetime="2013-08-08T19:15:00Z">Thursday, 8th August 2013</time>
+  @
+  <a href="http://L4RP.com">Lab for the Recently Possible</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">July 2013:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/leapmotion">Leap Motion</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2013/asyncjs-leapmotion/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2013-07-25T19:15:00Z" datetime="2013-07-25T19:15:00Z">Thursday, 25th July 2013</time>
+  @
+  <a href="http://L4RP.com">Lab for the Recently Possible</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/grunt">Grunt Your Way to Glory</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2013/asyncjs-grunt/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2013-07-11T19:15:00Z" datetime="2013-07-11T19:15:00Z">Thursday, 11th July 2013</time>
+  @
+  <a href="http://L4RP.com">Lab for the Recently Possible</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">June 2013:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/d3-intimate">Getting Intimate with D3.js</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2013/asyncjs-d3-intimate/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2013-06-27T19:15:00Z" datetime="2013-06-27T19:15:00Z">Thursday, 27th June 2013</time>
+  @
+  <a href="http://L4RP.com">Lab for the Recently Possible</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/fonts-resolution">Double Bill: Responsive Web Fonts, The Edge of the Web</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2013/async-responsive-web-fonts-resolution-independence/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2013-06-13T19:15:00Z" datetime="2013-06-13T19:15:00Z">Thursday, 13th June 2013</time>
+  @
+  <a href="http://L4RP.com">Lab for the Recently Possible</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">May 2013:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/birthday3">3rd Birthday Show n&#x27; Tell</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2013/async-third-birthday-show-n-tell/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2013-05-23T19:15:00Z" datetime="2013-05-23T19:15:00Z">Thursday, 23rd May 2013</time>
+  @
+  <a href="http://L4RP.com">Lab for the Recently Possible</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/eventual-consistency">Life in an Eventually Consistent World</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2013/asyncjs-eventual-consistency/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2013-05-09T19:15:00Z" datetime="2013-05-09T19:15:00Z">Thursday, 9th May 2013</time>
+  @
+  <a href="http://L4RP.com">Lab for the Recently Possible</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">April 2013:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/managing-modularity">Managing Modularity</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2013/async-managing-modularity/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2013-04-25T19:15:00Z" datetime="2013-04-25T19:15:00Z">Thursday, 25th April 2013</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/coffeescript-revisited">Caffeine Hit: Coffeescript Revisited</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2013/async-coffeescript-revisited/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2013-04-11T19:15:00Z" datetime="2013-04-11T19:15:00Z">Thursday, 11th April 2013</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">March 2013:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/meteor">Meteor Shower</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2013/meteor-shower/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2013-03-28T19:15:00Z" datetime="2013-03-28T19:15:00Z">Thursday, 28th March 2013</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/persona">Persona</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2013/asyncjs-persona/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2013-03-14T19:15:00Z" datetime="2013-03-14T19:15:00Z">Thursday, 14th March 2013</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">February 2013:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/build-games">Building HTML5 Games</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2013/async-building-html5-games/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2013-02-28T19:15:00Z" datetime="2013-02-28T19:15:00Z">Thursday, 28th February 2013</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/objects">Objects are the API, stupid!</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2013/objects-are-the-api-stupid/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2013-02-14T19:15:00Z" datetime="2013-02-14T19:15:00Z">Thursday, 14th February 2013</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">January 2013:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/firefoxos">Firefox OS: native mobile with JavaScript</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2013/asyncjs/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2013-01-24T19:15:00Z" datetime="2013-01-24T19:15:00Z">Thursday, 24th January 2013</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/d3">D3.js: Data Visualisation in the Browser</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2013/asyncjs-d3/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2013-01-10T19:15:00Z" datetime="2013-01-10T19:15:00Z">Thursday, 10th January 2013</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">December 2012:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/test">Parslow and Elliott&#x27;s Test Emporium</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2012/asyncjs-test/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2012-12-13T19:15:00Z" datetime="2012-12-13T19:15:00Z">Thursday, 13th December 2012</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">November 2012:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/pablo">Pablo and the art of SVG</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2012/asyncjs-pablo/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2012-11-22T19:15:00Z" datetime="2012-11-22T19:15:00Z">Thursday, 22nd November 2012</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/showntell-2012">2012 International Show n&#x27; Tell</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2012/asyncjs-showntell-2012/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2012-11-08T19:15:00Z" datetime="2012-11-08T19:15:00Z">Thursday, 8th November 2012</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">October 2012:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/tools">Tools for the Job</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2012/asyncjs-tools/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2012-10-25T19:15:00Z" datetime="2012-10-25T19:15:00Z">Thursday, 25th October 2012</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/responsive">Responsibly Responsive JavaScript</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2012/asyncjs-responsive/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2012-10-11T19:15:00Z" datetime="2012-10-11T19:15:00Z">Thursday, 11th October 2012</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">September 2012:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/onecanvas-2">One Canvas: part two</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2012/asyncjs-onecanvas-2/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2012-09-27T18:15:00Z" datetime="2012-09-27T18:15:00Z">Thursday, 27th September 2012</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/onecanvas">One Canvas: part one</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2012/asyncjs-onecanvas/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2012-09-13T18:15:00Z" datetime="2012-09-13T18:15:00Z">Thursday, 13th September 2012</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">August 2012:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/threejs">Three Dimensions Good</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2012/asyncjs-threejs/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2012-08-23T18:15:00Z" datetime="2012-08-23T18:15:00Z">Thursday, 23rd August 2012</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/appcache">Application Cache: Douchebag</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2012/asyncjs-appcache/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2012-08-09T18:15:00Z" datetime="2012-08-09T18:15:00Z">Thursday, 9th August 2012</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">July 2012:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/games">The State of HTML5 Games</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2012/asyncjs-games/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2012-07-26T18:15:00Z" datetime="2012-07-26T18:15:00Z">Thursday, 26th July 2012</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/modular">Modular JavaScript</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2012/asyncjs-modular/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2012-07-12T19:15:00Z" datetime="2012-07-12T19:15:00Z">Thursday, 12th July 2012</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">June 2012:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/functional">Functional JavaScript</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2012/asyncjs-functional/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2012-06-28T18:15:00Z" datetime="2012-06-28T18:15:00Z">Thursday, 28th June 2012</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/css-grown-up">CSS for Grown Ups</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2012/asyncjs-css/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2012-06-14T18:15:00Z" datetime="2012-06-14T18:15:00Z">Thursday, 14th June 2012</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">May 2012:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/hypermedia">Hypermedia APIs &amp; JavaScript Applications</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2012/asyncjs-hypermedia/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2012-05-24T18:15:00Z" datetime="2012-05-24T18:15:00Z">Thursday, 24th May 2012</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/angular">AngularJS - Testability in mind</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2012/asyncjs-angular/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2012-05-10T18:15:00Z" datetime="2012-05-10T18:15:00Z">Thursday, 10th May 2012</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">April 2012:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/birthday2">2nd Birthday Show n&#x27; Tell</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2012/asyncjs-birthday2/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2012-04-26T18:15:00Z" datetime="2012-04-26T18:15:00Z">Thursday, 26th April 2012</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/architecture">Architecture of a JavaScript Application</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2012/asyncjs-architecture/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2012-04-12T19:15:00Z" datetime="2012-04-12T19:15:00Z">Thursday, 12th April 2012</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">March 2012:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/eyebrow">EyebrowJS - A discussion on realtime, multi-device, rich-client applications</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2012/asyncjs-eyebrow/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2012-03-22T19:15:00Z" datetime="2012-03-22T19:15:00Z">Thursday, 22nd March 2012</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/alice">AliceJS - CSS animations for apps &amp; games</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2012/asyncjs-alice/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2012-03-15T19:15:00Z" datetime="2012-03-15T19:15:00Z">Thursday, 15th March 2012</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/plugins">Introduction to jQuery Plugin Development</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2012/asyncjs-plugins/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2012-03-08T19:15:00Z" datetime="2012-03-08T19:15:00Z">Thursday, 8th March 2012</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">February 2012:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/kirin">Introducing Kirin, a new mobile platform</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2012/asyncjs-kirin/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2012-02-23T19:15:00Z" datetime="2012-02-23T19:15:00Z">Thursday, 23rd February 2012</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/promises">Promises, Promises</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2012/asyncjs-promises/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2012-02-09T19:15:00Z" datetime="2012-02-09T19:15:00Z">Thursday, 9th February 2012</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">January 2012:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/largescale">Scaling Your JavaScript Application Architecture</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2012/largescale/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2012-01-26T19:15:00Z" datetime="2012-01-26T19:15:00Z">Thursday, 26th January 2012</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/practices">jQuery Best Practices</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2012/asyncjs-best-practices/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2012-01-12T19:15:00Z" datetime="2012-01-12T19:15:00Z">Thursday, 12th January 2012</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">December 2011:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/realtime">The Realtime Web</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2011/asyncjs-realtime/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2011-12-08T19:15:00Z" datetime="2011-12-08T19:15:00Z">Thursday, 8th December 2011</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">November 2011:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/underscore">Using Underscore.js with jQuery</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2011/asyncjs-underscore/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2011-11-24T19:15:00Z" datetime="2011-11-24T19:15:00Z">Thursday, 24th November 2011</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/international2011">International JavaScript Show n&#x27; Tell 2011</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2011/asyncjs-international/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2011-11-10T19:15:00Z" datetime="2011-11-10T19:15:00Z">Thursday, 10th November 2011</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">October 2011:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/webfonts">Beyond Arial</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2011/asyncjs-webfonts/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2011-10-27T19:15:00Z" datetime="2011-10-27T19:15:00Z">Thursday, 27th October 2011</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/jquery">My Favourite jQuery Plugin</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2011/asyncjs-jquery/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2011-10-13T19:15:00Z" datetime="2011-10-13T19:15:00Z">Thursday, 13th October 2011</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">September 2011:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/jungle-2">JavaScript Jungle 2</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2011/asyncjs-jungle-2/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2011-09-22T19:15:00Z" datetime="2011-09-22T19:15:00Z">Thursday, 22nd September 2011</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/jungle">JavaScript Jungle 1</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2011/asyncjs-jungle-1/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2011-09-08T19:15:00Z" datetime="2011-09-08T19:15:00Z">Thursday, 8th September 2011</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">August 2011:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/pubsub">An Introduction to JavaScript Events</a>
+    <a class="lanyrd-link" href="http://theskiff.org">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2011-08-25T19:15:00Z" datetime="2011-08-25T19:15:00Z">Thursday, 25th August 2011</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/security">HTML5 Security</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2011/asyncjs-security/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2011-08-11T19:15:00Z" datetime="2011-08-11T19:15:00Z">Thursday, 11th August 2011</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">July 2011:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/stack">Postcards from a Javascript App Stack</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2011/asyncjs-stack/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2011-07-28T19:15:00Z" datetime="2011-07-28T19:15:00Z">Thursday, 28th July 2011</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/titanium">Titanium: Native mobile apps with JavaScript</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2011/asyncjs-titanium/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2011-07-14T19:15:00Z" datetime="2011-07-14T19:15:00Z">Thursday, 14th July 2011</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">June 2011:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/coffeescript">CoffeeScriptease</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2011/async-coffeescript/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2011-06-23T19:15:00Z" datetime="2011-06-23T19:15:00Z">Thursday, 23rd June 2011</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/history">Making History</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2011/asyncjs-history/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2011-06-09T19:15:00Z" datetime="2011-06-09T19:15:00Z">Thursday, 9th June 2011</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">May 2011:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/intro-nodejs">An introduction to Node.js</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2011/asyncjs-intro-nodejs/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2011-05-26T19:15:00Z" datetime="2011-05-26T19:15:00Z">Thursday, 26th May 2011</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/birthday">First Birthday Show n&#x27; Tell</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2011/asyncjs-birthday/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2011-05-12T19:15:00Z" datetime="2011-05-12T19:15:00Z">Thursday, 12th May 2011</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">April 2011:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/micro">Micro Frameworks</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2011/asyncjs-micro/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2011-04-23T00:00:00Z" datetime="2011-04-23T00:00:00Z">Saturday, 23rd April 2011</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/backbone">Building browser-based web apps, with Backbone.js</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2011/asyncjs-backbone/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2011-04-14T19:15:00Z" datetime="2011-04-14T19:15:00Z">Thursday, 14th April 2011</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">March 2011:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/express">Everything Express</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2011/asyncjs-express/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2011-03-24T19:15:00Z" datetime="2011-03-24T19:15:00Z">Thursday, 24th March 2011</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/privates">Show Us Your Privates (er, JavaScript Design Patterns)</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2011/asyncjs-privates/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2011-03-10T19:15:00Z" datetime="2011-03-10T19:15:00Z">Thursday, 10th March 2011</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">February 2011:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/3djs">3D JS</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2011/3djs/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2011-02-24T19:15:00Z" datetime="2011-02-24T19:15:00Z">Thursday, 24th February 2011</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/patterns">Patterns for Performance</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2011/asyncjs-patterns/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2011-02-10T19:15:00Z" datetime="2011-02-10T19:15:00Z">Thursday, 10th February 2011</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">January 2011:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/chrome">Chrome Extensions &amp; the Chrome Web Store</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2011/asyncjs-chrome/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2011-01-27T19:15:00Z" datetime="2011-01-27T19:15:00Z">Thursday, 27th January 2011</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/flash">I Can&#x27;t Believe It&#x27;s Not Flash</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2011/asyncjs-flash/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2011-01-13T19:15:00Z" datetime="2011-01-13T19:15:00Z">Thursday, 13th January 2011</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">December 2010:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/debug">Debugging JavaScript</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2010/asyncjs-debug/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2010-12-09T19:15:00Z" datetime="2010-12-09T19:15:00Z">Thursday, 9th December 2010</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">November 2010:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/requirejs">Modular JavaScript with RequireJS</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2010/asyncjs-requirejs/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2010-11-25T19:15:00Z" datetime="2010-11-25T19:15:00Z">Thursday, 25th November 2010</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/showntell3">/International/ JavaScript Show n&#x27; Tell</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2010/asyncjs-showntell3/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2010-11-11T19:00:00Z" datetime="2010-11-11T19:00:00Z">Thursday, 11th November 2010</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">October 2010:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/enhancement">Responsive Enhancement</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2010/async-responsive-enhancement/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2010-10-28T18:15:00Z" datetime="2010-10-28T18:15:00Z">Thursday, 28th October 2010</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/phonegap">PhoneGap ~ Write native smartphone apps with HTML5 and JavaScript</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2010/asyncjs-phonegap/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2010-10-14T18:15:00Z" datetime="2010-10-14T18:15:00Z">Thursday, 14th October 2010</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">September 2010:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/canvas-hacknight">Canvas Hack Night</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2010/asyncjs-canvas-hacknight/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2010-09-23T00:00:00Z" datetime="2010-09-23T00:00:00Z">Thursday, 23rd September 2010</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/showntell2">JavaScript Show n&#x27; Tell</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2010/asyncjs-september/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2010-09-09T18:15:00Z" datetime="2010-09-09T18:15:00Z">Thursday, 9th September 2010</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">August 2010:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/canvas">Drawing In The Browser, with Canvas</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2010/asyncjs-canvas/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2010-08-19T19:15:00Z" datetime="2010-08-19T19:15:00Z">Thursday, 19th August 2010</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/unit">Unit Testing in JavaScript</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2010/asyncjs-unit/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2010-08-05T19:15:00Z" datetime="2010-08-05T19:15:00Z">Thursday, 5th August 2010</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">July 2010:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/performance">A Rough Guide to JavaScript Performance</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2010/asyncjs-performance/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2010-07-22T19:15:00Z" datetime="2010-07-22T19:15:00Z">Thursday, 22nd July 2010</time>
+  @
+  <a href="http://thewerks.org.uk">The Werks</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/surgeryjs">JavaScript Surgery</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2010/asyncjs-surgery/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2010-07-08T19:15:00Z" datetime="2010-07-08T19:15:00Z">Thursday, 8th July 2010</time>
+  @
+  <a href="http://thewerks.org.uk">The Werks</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">June 2010:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/css3">Using CSS3 Transitions &amp; Animations</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2010/asyncjs-css3/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2010-06-24T19:15:00Z" datetime="2010-06-24T19:15:00Z">Thursday, 24th June 2010</time>
+  @
+  <a href="http://thewerks.org.uk">The Werks</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/geomobile">The Geo API in iPhone &amp; Android</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2010/asyncjs-geomobile/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2010-06-10T19:15:00Z" datetime="2010-06-10T19:15:00Z">Thursday, 10th June 2010</time>
+  @
+  <a href="http://thewerks.org.uk">The Werks</a>
+</p>
+</li>
+    </ul>
+  </section>
+  <section class="module">
+    <h2 class="module-heading">May 2010:</h2>
+    <ul>
+        <li class="column event-item"><h3>
+  <a href="/showntell">JavaScript Show n&#x27; Tell</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2010/asyncjs-may/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2010-05-19T19:15:00Z" datetime="2010-05-19T19:15:00Z">Wednesday, 19th May 2010</time>
+  @
+  <a href="http://thewerks.org.uk">The Werks</a>
+</p>
+</li>
+        <li class="column event-item"><h3>
+  <a href="/nodejs">Getting started with Node.js</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2010/async-nodejs/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2010-05-13T19:15:00Z" datetime="2010-05-13T19:15:00Z">Thursday, 13th May 2010</time>
+  @
+  <a href="http://thewerks.org.uk">The Werks</a>
+</p>
+</li>
+    </ul>
+  </section>
+
+      <section class="module links">
+        <h2 class="module-heading">More:</h2>
+        <ul>
+            <li><a href="/news/" title="Recent Async Announcements">News</a></li>
+            <li><a href="http://groups.google.com/group/asyncjs/" title="Email list on Google Groups">Mailing List</a></li>
+            <li><a href="/feed/" title="Subscribe to the website&#x27;s Atom feed">Subscribe to feed</a></li>
+            <li><a href="http://feedburner.google.com/fb/a/mailverify?uri&#x3D;asyncjs" title="Subscribe to email updates for the website">Subscribe by email</a></li>
+            <li><a href="mailto:hello@asyncjs.com" title="Get in touch">Email Us</a></li>
+            <li><a href="/codeofconduct/" title="View our Code of Conduct">Code of Conduct</a></li>
+        </ul>
+      </section>
+      <footer>
+        <span>Webfonts <a href="https://fonts.google.com/?selection.family=Catamaran:400,700">Catamaran</a> and <a href="https://fonts.google.com/?selection.family=Anton">Anton</a> served by <a href="https://fonts.google.com">Google Fonts</a>.</span>
+        <span>Lanyrd Icons by <a href="https://paulrobertlloyd.com/2009/06/social_media_icons/">PRL</a>.</span>
+        <span>Content licenced under <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons</a>.</span><br />
+        Created by <a class="dharmafly" href="http://dharmafly.com">Dharmafly</a> and <a href="/humans.txt">friends</a>
+      </footer>
+      <div id="media-test"></div>
+      <script src="/js/main.js"></script>
+    </div>
+  </body>
+</html>

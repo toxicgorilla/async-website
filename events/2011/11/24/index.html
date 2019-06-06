@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="google-site-verification" content="i7Zcd4VE6mdqs2t1pb_kquaAQI_WItbWMOAt7_t0AYo" />
+    <title>Thursday, 24th November 2011 &ndash; Async</title>
+    <link rel="author" href="/humans.txt">
+    <link rel="shortcut icon" href="/img/favicon.png" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:400,700|Anton">
+    <link rel="stylesheet" href="/css/global.css" />
+  <!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-2150808-14', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+<!-- End Google Analytics --></head>
+  <body>
+    <div class="wrapper">
+      <header class="masthead">
+        <div class="logo-and-title">
+          <img class="logo" src="/img/logo-100x100.png" width="50" height="50" />
+          <h1>
+            <a href="/">
+              Async:
+            </a>
+          </h1>
+          <p>A Web Tech Meetup for <em>Brighton &amp; Hove</em></p>
+      
+        </div>
+        <ul class="social">
+            <li>
+              <a href="https://twitter.com/asyncjs" target="_blank" title="Follow @asyncjs on Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.5 8.778c-.441.196-.916.328-1.414.388.509-.305.898-.787 1.083-1.362-.476.282-1.003.487-1.564.597-.448-.479-1.089-.778-1.796-.778-1.59 0-2.758 1.483-2.399 3.023-2.045-.103-3.86-1.083-5.074-2.572-.645 1.106-.334 2.554.762 3.287-.403-.013-.782-.124-1.114-.308-.027 1.14.791 2.207 1.975 2.445-.346.094-.726.116-1.112.042.313.978 1.224 1.689 2.3 1.709-1.037.812-2.34 1.175-3.647 1.021 1.09.699 2.383 1.106 3.773 1.106 4.572 0 7.154-3.861 6.998-7.324.482-.346.899-.78 1.229-1.274z"/></svg>
+      
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/pages/Async/533002916854919" target="_blank" title="Like our page on Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 10h-2v2h2v6h3v-6h1.82l.18-2h-2v-.833c0-.478.096-.667.558-.667h1.442v-2.5h-2.404c-1.798 0-2.596.792-2.596 2.308v1.692z"/></svg>
+      
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/AsyncBrighton" target="_blank" title="Subscribe to our YouTube channel">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.23 7.102c-2.002-.136-6.462-.135-8.461 0-2.165.148-2.419 1.456-2.436 4.898.017 3.436.27 4.75 2.437 4.898 1.999.135 6.459.136 8.461 0 2.165-.148 2.42-1.457 2.437-4.898-.018-3.436-.271-4.75-2.438-4.898zm-6.23 7.12v-4.444l4.778 2.218-4.778 2.226zm2-12.222c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12z"/></svg>
+      
+              </a>
+            </li>
+            <li>
+              <a href="mailto:hello@asyncjs.com?Subject&#x3D;Please%20add%20me%20to%20the%20Async%20Slack%20channel" target="_blank" title="Request access to the Async Slack channel">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm5.336 12.105l-1.216.405.421 1.258c.165.509-.105 1.063-.615 1.228-.575.162-1.074-.161-1.232-.613l-.42-1.259-2.506.838.42 1.259c.195.601-.217 1.271-.916 1.271-.44 0-.8-.282-.93-.657l-.421-1.258-1.215.404c-.568.164-1.073-.158-1.232-.614-.164-.509.106-1.064.616-1.228l1.216-.405-.811-2.411-1.216.404c-.677.192-1.279-.295-1.279-.92 0-.408.255-.791.664-.923l1.216-.404-.421-1.258c-.165-.51.106-1.064.616-1.229.51-.164 1.065.105 1.231.615l.421 1.257 2.505-.838-.419-1.259c-.202-.619.242-1.276.921-1.276.41 0 .793.254.925.663l.421 1.258 1.215-.405c.51-.165 1.066.106 1.231.615.166.509-.105 1.063-.615 1.228l-1.217.404.811 2.412 1.217-.405c.621-.2 1.278.242 1.278.919 0 .41-.255.792-.664.924zm-4.496-3.214l-2.505.837.81 2.414 2.505-.837-.81-2.414z"/></svg>
+      
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/asyncjs/async-website" target="_blank" title="Fork this site on GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 6c-3.313 0-6 2.686-6 6 0 2.651 1.719 4.9 4.104 5.693.3.056.396-.13.396-.289v-1.117c-1.669.363-2.017-.707-2.017-.707-.272-.693-.666-.878-.666-.878-.544-.373.041-.365.041-.365.603.042.92.619.92.619.535.917 1.403.652 1.746.499.054-.388.209-.652.381-.802-1.333-.152-2.733-.667-2.733-2.965 0-.655.234-1.19.618-1.61-.062-.153-.268-.764.058-1.59 0 0 .504-.161 1.65.615.479-.133.992-.199 1.502-.202.51.002 1.023.069 1.503.202 1.146-.776 1.648-.615 1.648-.615.327.826.121 1.437.06 1.588.385.42.617.955.617 1.61 0 2.305-1.404 2.812-2.74 2.96.216.186.412.551.412 1.111v1.646c0 .16.096.347.4.288 2.383-.793 4.1-3.041 4.1-5.691 0-3.314-2.687-6-6-6z"/></svg>
+      
+              </a>
+            </li>
+        </ul>
+      </header>
+      <section class="module">
+          <h2 class="module-heading">Thursday, 24th November 2011:</h2>
+        <ul>
+            <li class="column event-item"><h3>
+  <a href="/underscore">Using Underscore.js with jQuery</a>
+    <a class="lanyrd-link" href="http://lanyrd.com/2011/asyncjs-underscore/">on Lanyrd</a>
+</h3>
+<p class="details vevent">
+  <time class="dtstart date" title="2011-11-24T19:15:00Z" datetime="2011-11-24T19:15:00Z">Thursday, 24th November 2011</time>
+  @
+  <a href="http://theskiff.org/">The Skiff</a>
+</p>
+</li>
+        </ul>
+      </section>
+      <section class="module about">
+        <div class="prose"><p>Async meets monthly in Brighton &amp; Hove, UK, to learn, discuss and play with JavaScript and related web technologies.</p>
+      <p>We host talks, hack nights, show n&#39; tells and community events, all of which are free. </p>
+      <p>Doors open 7.15pm, main session begins 7.45pm, we end around 9.30pm and continue nearby for an evening social.</p>
+      </div>
+      </section>
+      <section class="module links">
+        <h2 class="module-heading">More:</h2>
+        <ul>
+            <li><a href="/news/" title="Recent Async Announcements">News</a></li>
+            <li><a href="http://groups.google.com/group/asyncjs/" title="Email list on Google Groups">Mailing List</a></li>
+            <li><a href="/feed/" title="Subscribe to the website&#x27;s Atom feed">Subscribe to feed</a></li>
+            <li><a href="http://feedburner.google.com/fb/a/mailverify?uri&#x3D;asyncjs" title="Subscribe to email updates for the website">Subscribe by email</a></li>
+            <li><a href="mailto:hello@asyncjs.com" title="Get in touch">Email Us</a></li>
+            <li><a href="/codeofconduct/" title="View our Code of Conduct">Code of Conduct</a></li>
+        </ul>
+      </section>
+      <footer>
+        <span>Webfonts <a href="https://fonts.google.com/?selection.family=Catamaran:400,700">Catamaran</a> and <a href="https://fonts.google.com/?selection.family=Anton">Anton</a> served by <a href="https://fonts.google.com">Google Fonts</a>.</span>
+        <span>Lanyrd Icons by <a href="https://paulrobertlloyd.com/2009/06/social_media_icons/">PRL</a>.</span>
+        <span>Content licenced under <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons</a>.</span><br />
+        Created by <a class="dharmafly" href="http://dharmafly.com">Dharmafly</a> and <a href="/humans.txt">friends</a>
+      </footer>
+      <div id="media-test"></div>
+      <script src="/js/main.js"></script>
+    </div>
+  </body>
+</html>
